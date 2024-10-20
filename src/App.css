@@ -1,38 +1,186 @@
-.App {
+/* General reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f7fa;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Container */
+.app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Upload Container */
+.upload-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.upload-container h2 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.upload-container p {
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* File input styling */
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #f4f7fa;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+  border-color: #007bff;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"]::before {
+  content: 'Choose a file';
+  display: inline-block;
+  background: #007bff;
   color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="file"]:hover::before {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Button styles */
+button {
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Fetch Container */
+.fetch-container {
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+}
+
+.fetch-container h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.fetch-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.fetch-container li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.fetch-container li:last-child {
+  border-bottom: none;
+}
+
+/* Document Display */
+.document-display {
+  background-color: #f4f7fa;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.document-display strong {
+  display: block;
+  color: #007bff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.document-display p {
+  color: #333;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .upload-container, 
+  .fetch-container {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  .document-display strong {
+    font-size: 1rem;
   }
 }
