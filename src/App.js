@@ -26,7 +26,7 @@ function App() {
     setLoading(true);
 
     try {
-      // Replace <S3_PRESIGNED_URL> with the actual presigned URL from your backend
+      // Replace <S3_PRESIGNED_URL> with the actuald presigned URL from your backend
       const response = await axios.put('<S3_PRESIGNED_URL>', formData, {
         headers: {
           'Content-Type': file.type,
